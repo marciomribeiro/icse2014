@@ -1,0 +1,306 @@
+\begin{thebibliography}{10}
+
+\bibitem{aldrich-open-modules-ecoop05}
+J.~Aldrich.
+\newblock Open modules: Modular reasoning about advice.
+\newblock In {\em Proc. of the 19th European Conference on Object-Oriented
+  Programming (ECOOP)}, pages 144--168. Springer, July 2005.
+
+\bibitem{vander-phd-thesis}
+V.~Alves.
+\newblock {\em {I}mplementing {S}oftware {P}roduct {L}ine {A}doption
+  {S}trategies}.
+\newblock PhD thesis, Federal University of Pernambuco, Brazil, March 2007.
+
+\bibitem{ABGM:TSE02}
+D.~L. Atkins, T.~Ball, T.~L. Graves, and A.~Mockus.
+\newblock Using version control data to evaluate the impact of software tools:
+  A case study of the {Version Editor}.
+\newblock {\em IEEE Transactions on Software Engineering (TSE)}, 28(7):625--63,
+  2002.
+
+\bibitem{baniassad-conceptual-module-icse98}
+E.~L.~A. Baniassad and G.~C. Murphy.
+\newblock Conceptual module querying for software reengineering.
+\newblock In {\em Proc. of the 20th International Conference on Software
+  Engineering (ICSE)}, pages 64--73, Washington, DC, USA, 1998. IEEE Computer
+  Society.
+
+\bibitem{batory-refinement-tse04}
+D.~Batory, J.~N. Sarvela, and A.~Rauschmayer.
+\newblock Scaling step-wise refinement.
+\newblock {\em IEEE Transactions on Software Engineering (TSE)},
+  30(6):355--371, June 2004.
+
+\bibitem{bodden-ifds4spl-pldi13}
+E.~Bodden, T.~Tol\^{e}do, M.~Ribeiro, C.~Brabrand, P.~Borba, and M.~Mezini.
+\newblock Spllift - transparent and efficient reuse of ifds-based static
+  program analyses for software product lines.
+\newblock In {\em Proc. of the 34th annual ACM SIGPLAN conference on
+  Programming Language Design and Implementation (PLDI)}, Seattle, USA, 2013.
+\newblock To appear.
+
+\bibitem{box-statistics-for-experimenters}
+G.~E.~P. Box, J.~S. Hunter, and W.~G. Hunter.
+\newblock {\em Statistics for Experimenters: design, innovation, and
+  discovery}.
+\newblock Wiley-Interscience, 2005.
+
+\bibitem{brabrand-dfa4spl-aosd12}
+C.~Brabrand, M.~Ribeiro, T.~Tol\^{e}do, and P.~Borba.
+\newblock Intraprocedural dataflow analysis for software product lines.
+\newblock In {\em Proc. of the 11th International Conference on Aspect-Oriented
+  Software Development (AOSD)}, pages 13--24, Potsdam, Germany, 2012. ACM.
+
+\bibitem{brabrand-dfa4spl-taosd12}
+C.~Brabrand, M.~Ribeiro, T.~Tol\^{e}do, J.~Winther, and P.~Borba.
+\newblock Intraprocedural dataflow analysis for software product lines.
+\newblock {\em Transactions on Aspect-Oriented Software Development (TAOSD)},
+  10:73--108, 2013.
+
+\bibitem{buse-students-experiments-sigplan-11}
+R.~P. Buse, C.~Sadowski, and W.~Weimer.
+\newblock Benefits and barriers of user evaluation in software engineering
+  research.
+\newblock {\em ACM SIGPLAN Notices}, 46(10):643--656, October 2011.
+
+\bibitem{herbsleb-feature-dependencies-icse11}
+M.~Cataldo and J.~D. Herbsleb.
+\newblock Factors leading to integration failures in global feature-oriented
+  development: an empirical analysis.
+\newblock In {\em Proc. of the 33rd International Conference on Software
+  Engineering (ICSE)}, pages 161--170, New York, NY, USA, 2011. ACM.
+
+\bibitem{CB:SPLC08}
+W.~Chae and M.~Blume.
+\newblock Building a family of compilers.
+\newblock In {\em Proc. of 12th International Software Product Line Conference
+  (SPLC)}, pages 307--316, Los Alamitos, CA, 2008. IEEE Computer Society.
+
+\bibitem{F:EWSM95}
+J.-M. Favre.
+\newblock The {CPP} paradox.
+\newblock In {\em Proc. of the European Workshop on Software Maintenance},
+  1995.
+
+\bibitem{FKALSDPLS:ESE12}
+J.~Feigenspan, C.~K{\"a}stner, S.~Apel, J.~Liebig, M.~Schulze, R.~Dachselt,
+  M.~Papendieck, T.~Leich, and G.~Saake.
+\newblock Do background colors improve program comprehension in the \#ifdef
+  hell?
+\newblock {\em Empirical Software Engineering}, 2012.
+
+\bibitem{eduardo-empirical-study-icse08}
+E.~Figueiredo, N.~Cacho, C.~Sant'Anna, M.~Monteiro, U.~Kulesza, A.~Garcia,
+  S.~Soares, F.~Ferrari, S.~Khan, F.~Filho, and F.~Dantas.
+\newblock Evolving software product lines with aspects: an empirical study on
+  design stability.
+\newblock In {\em Proc. of the 30th International Conference on Software
+  Engineering (ICSE)}, pages 261--270, New York, NY, USA, 2008. ACM.
+
+\bibitem{filman:oopsla-aop00}
+R.~E. Filman and D.~P. Friedman.
+\newblock {Aspect-Oriented Programming is Quantification and Obliviousness}.
+\newblock In {\em Workshop on Advanced Separation of Concerns (OOPSLA)},
+  October 2000.
+
+\bibitem{GSSSTCR:IEEESoftware06}
+W.~G. Griswold, K.~Sullivan, Y.~Song, M.~Shonle, N.~Tewari, Y.~Cai, and
+  H.~Rajan.
+\newblock Modular software design with crosscutting interfaces.
+\newblock {\em IEEE Software}, 23(1):51--60, 2006.
+
+\bibitem{HKW:ICSE08}
+F.~Heidenreich, J.~Kopcsek, and C.~Wende.
+\newblock {FeatureMapper}: Mapping features to models.
+\newblock In {\em In Comp. of the 30th International Conference on Software
+  Engineering (ICSE)}, pages 943--944, New York, 2008. ACM Press.
+
+\bibitem{statistics-sensitivity-analysis-book}
+T.~Hill and P.~Lewicki.
+\newblock {\em {Statistics: Methods and Applications. A Comprehensive Reference
+  for Science, Industry, and Data Mining}}.
+\newblock StatSoft, Tulsa, OK, USA, 1st edition, 2006.
+
+\bibitem{HEBSL:FOSD11}
+W.~Hofer, C.~Elsner, F.~Blendinger, W.~Schrˆder-Preikschat, and D.~Lohmann.
+\newblock Toolchain-independent variant management with the leviathan
+  filesystem.
+\newblock In {\em Proc. of GPCE Workshop on Feature-Oriented Software
+  Development (FOSD)}, pages 18--24, 2011.
+
+\bibitem{aspect-scope}
+M.~Horie and S.~Chiba.
+\newblock Aspectscope: An outline viewer for {A}spect{J} programs.
+\newblock {\em Journal of Object Technology}, 6(9):341--361, 2007.
+
+\bibitem{join-point-interfaces-erics-esec-fse11}
+M.~Inostroza, E.~Tanter, and E.~Bodden.
+\newblock Join point interfaces for modular reasoning in aspect-oriented
+  programs.
+\newblock In {\em Proc. of the 19th ACM SIGSOFT symposium and the 13th European
+  conference on Foundations of software engineering (ESEC/FSE)}, pages
+  508--511, New York, NY, USA, 2011. ACM.
+
+\bibitem{christian-cide-icse08}
+C.~K\"{a}stner, S.~Apel, and M.~Kuhlemann.
+\newblock Granularity in {S}oftware {P}roduct {L}ines.
+\newblock In {\em Proc. of the 30th International Conference on Software
+  Engineering (ICSE)}, pages 311--320, New York, NY, USA, 2008. ACM.
+
+\bibitem{fosd11}
+C.~K{\"a}stner, S.~Apel, and K.~Ostermann.
+\newblock The road to feature modularity?
+\newblock In {\em Proc.\ SPLC Workshop on Feature-Oriented Software Development
+  (FOSD)}, New York, Sept. 2011. ACM Press.
+
+\bibitem{KATS:TOSEM11}
+C.~K{\"a}stner, S.~Apel, T.~Th{\"u}m, and G.~Saake.
+\newblock Type checking annotation-based product lines.
+\newblock {\em ACM Transactions on Software Engineering and Methodology
+  (TOSEM)}, 21(3), 2012.
+
+\bibitem{KOE:OOPSLA12}
+C.~K{\"a}stner, K.~Ostermann, and S.~Erdweg.
+\newblock A variability-aware module system.
+\newblock In {\em Proc. of the 27th Annual ACM SIGPLAN Conference on
+  Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA)},
+  pages 773--792, New York, NY, 10 2012.
+
+\bibitem{murphy-mylyn-fse2006}
+M.~Kersten and G.~C. Murphy.
+\newblock Using task context to improve programmer productivity.
+\newblock In {\em Proc. of the 14th International Symposium on Foundations of
+  Software Engineering (FSE)}, pages 1--11, New York, NY, USA, 2006. ACM.
+
+\bibitem{kiczales-aspectoriented-ecoop97}
+G.~Kiczales, J.~Lamping, A.~Mendhekar, C.~Maeda, C.~Lopes, J.-M. Loingtier, and
+  J.~Irwin.
+\newblock Aspect--{O}riented {P}rogramming.
+\newblock In {\em Proc. of the 11th European Conference on Object--Oriented
+  Programming (ECOOP)}, pages 220--242, 1997.
+
+\bibitem{shriram}
+S.~Krishnamurthi, K.~Fisler, and M.~Greenberg.
+\newblock Verifying aspect advice modularly.
+\newblock {\em ACM SIGSOFT Software Engineering Notes}, 29(6):137--146, October
+  2004.
+
+\bibitem{erwig-harmful}
+D.~Le, E.~Walkingshaw, and M.~Erwig.
+\newblock \#ifdef confirmed harmful: Promoting understandable software
+  variation.
+\newblock In {\em IEEE International Symposium on Visual Languages and
+  Human-Centric Computing (VL/HCC)}, pages 143--150, 2011.
+
+\bibitem{liebig-40spls-icse10}
+J.~Liebig, S.~Apel, C.~Lengauer, C.~K\"{a}stner, and M.~Schulze.
+\newblock An analysis of the variability in forty preprocessor-based software
+  product lines.
+\newblock In {\em Proc. of the 32nd ACM/IEEE International Conference on
+  Software Engineering (ICSE)}, pages 105--114, New York, NY, USA, 2010. ACM.
+
+\bibitem{liskov-clu-77}
+B.~Liskov, A.~Snyder, R.~Atkinson, and C.~Schaffert.
+\newblock Abstraction mechanisms in clu.
+\newblock {\em Communications of ACM}, 20(8):564--576, 1977.
+
+\bibitem{fragile-base-class-ecoop98}
+L.~Mikhajlov and E.~Sekerinski.
+\newblock A study of the fragile base class problem.
+\newblock In {\em Proc. of the 12th European Conference on Object-Oriented
+  Programming (ECOOP)}, pages 355--382. Springer-Verlag, 1998.
+
+\bibitem{parnas-criteria-cacm72}
+D.~L. Parnas.
+\newblock On the criteria to be used in decomposing systems into modules.
+\newblock {\em CACM}, 15(12):1053--1058, 1972.
+
+\bibitem{rajan-ptolemy-ecoop08}
+H.~Rajan and G.~T. Leavens.
+\newblock Ptolemy: A language with quantified, typed events.
+\newblock In {\em Proc. of the 22nd European conference on Object-Oriented
+  Programming (ECOOP)}, pages 155--179, Berlin, Heidelberg, 2008.
+  Springer-Verlag.
+
+\bibitem{rashid-ao-mm}
+A.~Rashid, T.~Cottenier, P.~Greenwood, R.~Chitchyan, R.~Meunier, R.~Coelho,
+  M.~Sudholt, and W.~Joosen.
+\newblock Aspect-oriented software development in practice: Tales from
+  aosd-europe.
+\newblock {\em Computer}, 43(2):19 --26, 2010.
+
+\bibitem{ribeiro-emergent-onward10}
+M.~Ribeiro, H.~Pacheco, L.~Teixeira, and P.~Borba.
+\newblock Emergent {F}eature {M}odularization.
+\newblock In {\em Onward!, affiliated with ACM SIGPLAN International Conference
+  on Systems, Programming, Languages and Applications: Software for Humanity
+  (SPLASH)}, pages 11--18, New York, NY, USA, 2010. ACM.
+
+\bibitem{ribeiro-feature-dependencies-gpce11}
+M.~Ribeiro, F.~Queiroz, P.~Borba, T.~Tol\^{e}do, C.~Brabrand, and S.~Soares.
+\newblock On the impact of feature dependencies when maintaining
+  preprocessor-based software product lines.
+\newblock In {\em Proc. of the 10th ACM International Conference on Generative
+  Programming and Component Engineering (GPCE)}, pages 23--32, Portland,
+  Oregon, USA, 2011. ACM.
+
+\bibitem{delta-ina-splc10}
+I.~Schaefer, L.~Bettini, F.~Damiani, and N.~Tanzarella.
+\newblock Delta-oriented programming of software product lines.
+\newblock In {\em Proc. of the 14th international conference on Software
+  product lines (SPLC)}, pages 77--91, Berlin, Heidelberg, 2010.
+  Springer-Verlag.
+
+\bibitem{SGC:ACP4IS07}
+N.~Singh, C.~Gibbs, and Y.~Coady.
+\newblock {C-CLR}: A tool for navigating highly configurable system software.
+\newblock In {\em Proc.\ AOSD Workshop on Aspects, Components, and Patterns for
+  Infrastructure Software (ACP4IS)}, page~9, New York, 2007. ACM Press.
+
+\bibitem{ifdef-harmful}
+H.~Spencer and G.~Collyer.
+\newblock \#ifdef considered harmful, or portability experience with {C} news.
+\newblock In {\em Proc. of the Usenix Summer 1992 Technical Conference}, pages
+  185--198, Berkeley, CA, USA, June 1992. Usenix Association.
+
+\bibitem{S:OOPSLA06}
+F.~Steimann.
+\newblock The paradoxical success of aspect-oriented programming.
+\newblock In {\em Proc. of the 21st annual ACM SIGPLAN conference on
+  Object-oriented programming systems, languages, and applications (OOPSLA)},
+  pages 481--497, New York, 2006. ACM Press.
+
+\bibitem{SPAK:TOSEM10}
+F.~Steimann, T.~Pawlitzki, S.~Apel, and C.~K{\"a}stner.
+\newblock Types and modularity for implicit invocation with implicit
+  announcement.
+\newblock {\em ACM Transactions on Software Engineering and Methodology
+  (TOSEM)}, 20(1):Article 1; 43 pages, 2010.
+
+\bibitem{storzer-fragile-pointcut-04}
+M.~St{\"o}rzer and C.~Koppen.
+\newblock Pcdiff: Attacking the fragile pointcut problem, abstract.
+\newblock In {\em European Interactive Workshop on Aspects in Software},
+  Berlin, Germany, September 2004.
+
+\bibitem{batory-safe-composition-gpce07}
+S.~Thaker, D.~Batory, D.~Kitchin, and W.~Cook.
+\newblock Safe composition of product lines.
+\newblock In {\em Proc. of the 6th International Conference on Generative
+  Programming and Component Engineering (GPCE)}, pages 95--104, New York, NY,
+  USA, 2007. ACM.
+
+\bibitem{mary-shaw-global-variable-harmful-73}
+W.~Wulf and M.~Shaw.
+\newblock Global variable considered harmful.
+\newblock {\em SIGPLAN Notices}, 8(2):28--34, 1973.
+
+\bibitem{yin-fixes-become-bugs-fse11}
+Z.~Yin, D.~Yuan, Y.~Zhou, S.~Pasupathy, and L.~Bairavasundaram.
+\newblock How do fixes become bugs?
+\newblock In {\em Proc. of the 19th ACM SIGSOFT symposium and the 13th European
+  conference on Foundations of software engineering (ESEC/FSE)}, pages 26--36,
+  New York, NY, USA, 2011. ACM.
+
+\end{thebibliography}

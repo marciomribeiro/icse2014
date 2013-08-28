@@ -1,0 +1,17 @@
+\section{Concluding remarks}
+
+In this paper we provide a full comprehension of emergent interfaces that emulate missing interfaces in many product line implementations. We provide a complete version of a tool capable of computing interfaces from data-flow analysis on demand. Emergent interfaces raise awareness of feature dependencies that are critical for maintaining (variable) software systems. With a conducted and replicated controlled experiment, we evaluate to what extent such tool support can help on achieving better feature modularization. Our study focuses on feature code change tasks in product lines implemented with preprocessors, since they are the prevalent way to implement variable software in industrial practice. We observe a significant decrease in code change effort by emergent interfaces, when faced with \textit{interprocedural} dependencies. Similarly, our study suggests a reduction in errors made during those code change tasks. In future work, we will focus on scaling the underlying data-flow analysis by trading off performance and precision, and investigate emergent interfaces for other implementation techniques.
+
+%We introduce emergent interfaces that emulate missing interfaces in many product line implementations by computing interfaces from data-flow analysis on demand. 
+
+%\reviewer{The conclusion says this paper introduces emergent interfaces. It really does not; previous papers did this.}
+
+%\idea{Focus on the evaluation.}
+
+%\section{Concluding remarks}
+%
+%In this paper we contributed to better understand to what extent tool-based support can help on achieving better feature modularization. We focused on preprocessors, since they are the prevalent way to implement variable software in industrial practice. Initially, we discussed problems related to feature dependencies. Then, we presented emergent interfaces and a tool support---named Emergo---to minimize these problems.
+%
+%To evaluate our proposal, we conducted and replicated an experiment that focuses on measuring development \textit{effort} and \textit{errors} introduction. The results are promising: we observed a large difference with a three-fold \textit{effort} reduction and statistically significant when using emergent interfaces for \textit{interprocedural} dependencies. When considering \textit{intraprocedural} dependencies, our results still reveal improvements (1.5 fold), but we confirmed statistical significance in only one replication. We also observed that, presenting feature dependencies is valuable, since it leads developers to avoid \textit{errors} introduction. In both rounds, our results and conclusions are similar despite the different students levels.
+%
+%Despite all the empirical evidence, we should be aware of the potential problems such as performance and missing dependencies. To avoid missing dependencies, developers can exchange performance for precision. They can configure Emergo to navigate deeper into method calls as well as take additional dataflow analyses into account. However, we might have both by reducing the depth and using Emergo iteratively by asking again for interfaces for each impacted feature.

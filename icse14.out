@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Maintaining preprocessor-based product lines}{}
+\BOOKMARK [2][-]{subsection.2.1}{Scenario 1: Implementing a new requirement}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Scenario 2: Fixing an unused variable}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Cross-Feature Dependencies in the Wild}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{Beyond preprocessors}{section.2}
+\BOOKMARK [1][-]{section.3}{Emergent Interfaces}{}
+\BOOKMARK [2][-]{subsection.3.1}{Implementation: Emergo}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Underlying Analysis}{section.3}
+\BOOKMARK [1][-]{section.4}{Experimental design}{}
+\BOOKMARK [2][-]{subsection.4.1}{Goal, Questions, and Metrics}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Participants}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Material and Code Change Tasks}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{Hypotheses}{section.4}
+\BOOKMARK [2][-]{subsection.4.5}{Design}{section.4}
+\BOOKMARK [2][-]{subsection.4.6}{Procedure}{section.4}
+\BOOKMARK [2][-]{subsection.4.7}{Executions and Derivations}{section.4}
+\BOOKMARK [1][-]{section.5}{Results and Discussion}{}
+\BOOKMARK [2][-]{subsection.5.1}{New-requirement tasks}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Unused-variable tasks}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{Interpretation}{section.5}
+\BOOKMARK [2][-]{subsection.5.4}{Threats to validity}{section.5}
+\BOOKMARK [1][-]{section.6}{Related work}{}
+\BOOKMARK [1][-]{section.7}{Concluding remarks}{}
+\BOOKMARK [1][-]{section.8}{References}{}
+\BOOKMARK [1][-]{appendix.A}{Additional materials}{}
+\BOOKMARK [1][-]{appendix.B}{ANOVA tables}{}

@@ -1,0 +1,87 @@
+%!TEX root = ../main.tex
+
+\section{Emergent Interfaces}
+
+\label{sec:emergent}
+
+%The problems discussed so far occur essentially because features \textit{share} values and behavior without clear interfaces. Whenever we have such sharing in the control flow or data flow, we say that there is a code level \textit{feature dependency} between the involved features~\cite{ribeiro-feature-dependencies-gpce11}. For instance, a mandatory feature might declare a variable subsequently used by optional features (see \texttt{totalScore} and \texttt{status} in Figures~\ref{fig:arena-example} and~\ref{fig:gfilestatus-example}, respectively).
+
+There are several paths to attack the problem with unclear cross-feature dependencies outlined in the previous section.
+The typical language-designer approach is to introduce additional modularity concepts into the programming language and make control-flow and data-flow explicit in interfaces, such as~\cite{shriram}. %{search for references, at least Shirams AOP work'04 should fit, but probably many many more; potentially also many of the AOP+Interface papers cited above}
+With \emph{emergent interfaces}, we pursue an alternative tool-based direction, which also works with existing languages and existing implementations and infers interfaces on demand.
+
+Emergent interfaces establish, on demand and according to a given code change task, interfaces to feature code. We use the following notion of interface: ``an interface is a way to resolve potential conflicts between the interacting parts of a design"~\cite{clark-design-rules-00}. Thus, we provide treaties among features to resolve conflicts caused by cross-feature dependencies. For example, an interface may state that a feature \textit{reads} a variable \textit{modified} by another.
+
+When developers are interested in dependencies from a specific code block, they can ask the tool that implements the technique to compute interfaces, pointing out feature dependencies. The interfaces emerge on demand, giving support for developers to maintain one feature without breaking others. That is, the interfaces are inferred and shown in the IDE environment, instead of being written manually by developers.
+
+To illustrate how emergent interfaces work, we return to our scenarios from the previous section, using preprocessor-based implementations and views of virtual separation. Consider \textit{Scenario 1}, where the developer is supposed to change how the total score is computed. The first step when using our approach consists of selecting the \emph{maintenance points}. A maintenance point is the point that the developer wants to change, for which she is interested in the interfaces to other features. In our case, the developer  manually selects the \texttt{totalScore} assignment as maintenance point (see the dashed rectangle in Figure~\ref{fig:arena-ei}) and then our tool analyzes the code to capture dependencies between the feature she is maintaining and the others. Finally, the interface emerges as shown in Figure~\ref{fig:arena-ei} (right-hand side).
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.45\textwidth]{images/Arena-EI.pdf}
+\caption{Emergent interface for Scenario 1.}
+\label{fig:arena-ei}
+\end{figure}
+
+The emerged interface states that the code change task may impact the behavior of products containing the \textit{ARENA} feature. So, the common code base provides \texttt{totalScore} current's value whereas \textit{ARENA} requires it. The developer is now aware of the dependency. When investigating it, she is likely to discover that she also needs to modify \textit{ARENA} code to avoid introducing an error.
+
+The tool we present next always compute interfaces for a given set of maintenance points, helping developers to make code changes once they identify these points. Emergent interfaces do not contribute to finding the maintenance points in the first place, through.
+
+%Notice we do \textit{not} provide any support to find the maintenance points. This task is up to the developer according to her knowledge about the source code. After finding these points, she takes them as input to our approach. Then, we provide information about the potential features she might impact.
+
+%This way, EIs focus on the features we indeed might impact, avoiding developers from the task of analyzing unnecessary features, being important to decrease \textit{Effort}. For instance, consider \textit{Scenario 2} (Section~\ref{sec:breaks}) in which we use the \texttt{status} variable in two optional features. Here, our interface ignores the \textit{SLINK} feature, since it does not use the \texttt{status} variable. Now, the navigation throughout the code is easier.
+
+\subsection{Implementation: Emergo}
+
+We implemented the concept of emergent interfaces in an Eclipse-based tool named Emergo. Emergo computes emergent interfaces based on feature dependencies between methods or within a single method, by using \textit{interprocedural} or \textit{intraprocedural} feature-sensitive data-flow analysis~\cite{brabrand-dfa4spl-aosd12, bodden-ifds4spl-pldi13}. This means we can take only valid feature combinations into account, preventing developers from reasoning about feature constraints and even from assuming invalid dependencies in case of mutually exclusive features (which may cause potential errors). For instance, developers might assume that changing the \texttt{xCenter} assignment in feature \textit{J2SE}---underlined in Figure~\ref{fig:emergo-alternative}---may lead to problems in feature \textit{J2ME} (see the ellipse). Since the involved features are mutually exclusive, Emergo would not emerge any interface, which means that code change tasks in the former feature do not impact the latter, and vice-versa.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Alternative.pdf}
+\caption{No dependency: mutually exclusive features.}
+\label{fig:emergo-alternative}
+\end{figure}
+
+Figure~\ref{fig:emergo} illustrates a screen shot of Emergo in action. After the developer found and selected the maintenance point in Line~1277 (the \texttt{totalScore} assignment), Emergo shows emergent interfaces using a table view and a graph view. To better understand the results pointed by Emergo, we now focus on the table. The ``Description" column illustrates the maintenance points. Since there is no \texttt{\#ifdef} statement encompassing the maintenance point, we associate it with the \textit{mandatory} feature. We show the potentially impacted features in the ``Feature" column, here the \textit{ARENA} feature. The table view also shows the exact lines of code that contain uses of \texttt{totalScore} as well as their respective java files (see the ``Resource" column). In summary, we read the first line of the table as follows: if she changes the \texttt{totalScore} assignment belonging to the mandatory feature, she can potentially impact the \textit{ARENA} feature in line 177 of the \texttt{NetworkFacade} class.
+
+Initially, Emergo shows all dependencies in both views. This way, depending on the project, it points lots of dependencies, which might be difficult to read and understand them. Thus, to focus on a particular one, she can click on the corresponding table line and Emergo automatically removes unrelated dependencies of the graph. This means we only show the path associated with the dependency of that table line. According to Figure~\ref{fig:emergo}, she selected the first line of the table. So, the graph now has only the path from the maintenance point to line 177 of the \texttt{NetworkFacade} class. 
+
+Also, developers can reach the impacted feature code in the IDE editor by clicking either on table lines or on the graph nodes. For example, if she clicks on the node ``\texttt{score = (s < 0) ? 0 : s;}" of the graph, she reaches the code that checks the invariant that all scores are positive. Now, she is aware of the dependency. So, to accomplish the task of allowing negative scores she knows she also needs to remove the check.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=.9\textwidth]{images/Emergo.pdf}
+\caption{Emergent interface for Scenario 1 using Emergo.}
+\label{fig:emergo}
+\end{figure*}
+
+Emergo can also help on preventing developers from analyzing unnecessary features and their associated code, which is important to decrease code change effort. In particular, we believe that Emergo can help on making the idea of virtual separation of concerns realistic. Thus, we can hide features and rely on Emergo to only open the ones we really need to. For instance, consider \textit{Scenario 2} (Section~\ref{sec:breaks}). Emergo would focus on \textit{CHOWN} and \textit{UTIMES}. So, we could keep \textit{SLINK} hidden, since it is not related to the current task.
+
+Currently, developers can select maintenance points that range from simple variable assignments to code blocks that do not span to another method.
+
+%containing assignments, method calls, and variable (local or class attributes) and method declarations. To compute interfaces for declarations, we also rely on AST-based analyses.
+
+\subsection{Underlying Analysis}
+
+The current implementation of Emergo computes interfaces based on data using \textit{interprocedural} and \textit{intraprocedural} feature-sensitive \textit{reaching-definition analysis}. So, from the maintenance points, we consider the reached program statements and their associated feature expressions to form our emergent interfaces. The feature-sensitive approach is capable of analyzing all configurations of a product line without having to generate all of them explicitly. This increases performance~\cite{brabrand-dfa4spl-aosd12, bodden-ifds4spl-pldi13}, which is important for interactive tools like ours that need to provide quick responses to developers requests. To perform the feature-sensitive analysis, we annotate the control-flow graph with feature information, lift the lattice to contain a mapping of sets of configurations to lattice values, and lift the transfer functions to figure out whether or not apply the ordinary function. The lifted function lazily splits the sets of configurations in two disjoint parts, depending on the feature expression annotated with the statement being analyzed: a set for which the function should be applied; and a set for which it should not~\cite{brabrand-dfa4spl-taosd12}.
+
+%The current implementation of Emergo computes interfaces based on data using \textit{interprocedural} and \textit{intraprocedural} feature-sensitive reaching definition analysis. We also rely on AST-based analyses.
+
+%\textbf{TODO explain in one or two paragraphs what kind of analysis is performed. move technical content from the previous section here.}
+
+%\reviewer{Rev2: With regards to the technique of expressing and computing emergent interfaces, it is unclear what the input to the technique is. Is it a specific variable? A variable at a particular point in the code? An entire code block? A code block that spans more than one method? I would like to see much more clarity on the inputs to the mehod than provided by:}
+
+%\reviewer{Figure 4 also made me question what the inputs and outputs are. How is the impacted feature shown? What is the feature in this example?}
+
+%\idea{Maybe we should consider a complete screen shot of Emergo, instead of only considering the table view. We can do it since now we have some extra pages: 10 (icse) x 14 (oopsla).}
+
+%\begin{figure}[htp]
+%\centering
+%\includegraphics[width=0.45\textwidth]{images/Emergo-Table-View.pdf}
+%\caption{Emergo view illustrating the impacted features. Lines 63 and 59 contain uses of \texttt{status}.}
+%\label{fig:emergo-table-view}
+%\end{figure}
+
+%\reviewer{Rev1: That said, section III felt too short, especially if you have extended the tool. Some words on that and how it works would help.}
+
+%\chk{from the description it is not clear how emergent interfaces are computed. you just say dataflow analysis, but that's probably littel help. you might want to describe at least in a few words when Emergo reports something, and how the analysis figures that out. possibly you might need to show a dataflow graph for one of the examples.}

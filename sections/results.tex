@@ -1,0 +1,164 @@
+%!TEX root = ../main.tex
+
+\section{Results and Discussion}
+
+\label{sec:results}
+
+Next we describe the results and test the hypotheses before discussing their implications (all raw results are available online, see Appendix~A). We proceed separately with the two tasks (new requirement and unused variable), reporting results from both rounds.
+
+\subsection{New-requirement tasks}
+
+We plot the times for both new-requirement tasks (1 and~2) with in Figure~\ref{fig:beanplots-nr}. Here we use beanplot batches, where each batch shows individual observations as small horizontal lines---the longest represents the average of that batch---and the density trace forms the batch shape. In Round~1 (see the legend in the figure), the slowest time when using emergent interfaces is still faster than the fastest time without. On average, participants accomplished the task \textit{3 times} faster with emergent interfaces. The key results were confirmed in the replication (emergent interfaces is, on average, 3.1 times faster), despite the different student levels. According to an ANOVA test, we obtain statistically significant evidence (see Appendix~B) that emergent interfaces reduce effort in both new-requirement tasks.
+
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Beanplots-NR.pdf}
+\caption{Time results for the new-requirement task in both rounds.}
+\label{fig:beanplots-nr}
+\end{figure}
+
+In Figure~\ref{fig:barplot-ne}, we plot the NE results for both new-requirement tasks. In Round~1, only one participant committed more errors when using emergent interfaces than without, and all of them committed errors when not using emergent interfaces (they thought they had finished the task but had not, potentially because they missed a dependency). The replication roughly confirms the results: $8$ ($57\%$) participants committed errors when not using emergent interfaces, but only $4$ ($28\%$) participants committed errors with emergent interfaces. Here we do not perform an ANOVA test on number of errors because we have many zero samples, being hard to observe a tendency and draw significant conclusions.
+
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Barplot-NE.pdf}
+\caption{Number of Errors for the new-requirement task in both rounds. A-J: Round~1; K-X: Round~2.}
+\label{fig:barplot-ne}
+\end{figure}
+
+\subsection{Unused-variable tasks}
+
+Differently from the new-requirement task, here we do not have a test case, so we do not force participants to finish the task correctly. We make this important decision after reviewing the screen recordings from the pilot study. When fixing the unused variable problem, participants spend time since they miss statements such as \texttt{\#endif} and tokens like ``//" and ``\#", essential to compile the code and run the test, but typically less common when somebody is more familiar with the used notation. Because including this time would introduce bias into our results, we ask participants to write the \texttt{\#ifdef} feature expression in the task description sheets, not in the source code.
+Thus, all participants finished the unused-variable task, but some committed errors when writing the feature expressions (so, NE $\neq 0$), which means we could have data of participants that, for example, did not try hard enough and consequently finished the task earlier. 
+
+Regarding the measured time, it actually only reflects the time participants need until they think they are done.
+To reflect incorrect solutions in the time, we could add a time penalty for incorrect tasks that simulates the extra time participants would have needed, if we mechanically reported the error or if they found the problem unfixed in practice.
+As time penalty for an incorrect solution, we add the half the standard deviation of all participants times. We analyze both the original time (time until they think they are done) and the adjusted time with the penalty for incorrect tasks (which can be seen as a form of sensitivity analysis~\cite{statistics-sensitivity-analysis-book}).
+
+%In summary, we are using a sensitivity analysis~\cite{sensitivity-analysis-issre02} to check what happens in our ANOVA tests if we change the time metric by adding the penalty.
+
+%trying to estimate the real time to accomplish the task by
+
+%help us on better understanding the influence of the penalty on the effort evaluation.
+
+%we use a sensitivity analysis to assess the uncertainty in ou
+
+%to be to able to run the ANOVA test. To do so, we use the standard deviation of all participants times in this task. \chk{REF}
+
+%\chk{seems unsound to me. lets talk about this! if that's standard procedure explain so and give a reference! otherwise we mix our two dependent variables...}
+
+%As the unused-variable task consists of fixing two unused variables, we consider it formed by two subtasks. The collected time data corresponds to a participant accomplishing both subtasks. So, we assume that participants spend the same time to accomplish both subtasks and add the time penalty as follows: if NE $= 2$, we add the standard deviation; if NE $= 1$, we add the standard deviation divided by two; if NE $= 0$, we add no penalty.
+
+We plot the adjusted times for both unused-variable tasks (Tasks 3 and~4) in Figure~\ref{fig:beanplots-uv}. Differently from the new-requirement task, here the use of emergent interfaces adds little: the difference between the treatments is smaller. In fact, we obtain statistically significant evidence that emergent interfaces reduce effort only in the second round. The statistical results are stable for the original time (time until they think they are done) and the adjusted time. Regarding the adjusted time, the participants were {1.6 times} faster, on average.
+
+%In Round~1, participants accomplished the task on average \textit{1.5 times} faster when using emergent interfaces. We confirmed the results in the replication, where participants were \textit{1.6 times} faster. Differently from the \textit{new-requirement} task, here the use of emergent interfaces adds little. We confirm this when running the ANOVA test: the difference between the treatments is not statistically significant on \textit{Round~1}. It is, however, in the replication (\textit{Round~2}).
+
+When considering the product lines peculiarities, the \textit{MobileMedia} methods are simpler when compared to the \textit{Best Lap} ones. The time spent to accomplish the unused-variable task for the \textit{MobileMedia} variables is, on average, fairly similar when using and not using emergent interfaces. However, the difference is much greater for the \textit{Best Lap} variables: participants using emergent interfaces are \textit{2} and \textit{2.2 times} faster in the first and second rounds. Again, notice that the results are similar on both rounds.
+
+%Notice that the difference between VSoC and emergent interfaces is not big when compared to the results of the \textit{new-requirement} maintenance task. On average, when using VSoC, participants are \textit{1.5 times} slower. Three participants ($30\%$) accomplished the maintenance task faster when using VSoC. When considering \textit{Round~2}, the difference is slightly higher: on average, when using VSoC, participants are \textit{1.68 times} slower. Four ($28\%$) participants that were faster when using VSoC.
+
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Beanplots-UV.pdf}
+\caption{Time results for the unused-variable task in both rounds.}
+\label{fig:beanplots-uv}
+\end{figure}
+
+%Despite the differences (\textit{1.5} and \textit{1.68}), the ANOVA test points that the first one is not statistically significative (\textit{p-value} $= 0.13$), which leads us to not reject the null hypothesis for \textit{Round~1}. However, we do reject when considering \textit{Round~2}, since the \textit{p-value} for the technique factor is less than $0.05$. In particular, we have \textit{p-value} $= 0.016$.
+
+%According to the Boxplot depicted in Figure~\ref{}, we have an outlier when using VSoC. To verify if this outlier changes our ANOVA test result, we replaced such a value by the VSoC time mean ($\mu = 443$ seconds) and did not add any penalty. Again, we reject the null hypothesis since \textit{p-value} $= 0.024$.
+
+We plot the NE metric in Figure~\ref{fig:barplots-ne2}. The left-hand side represents Round~1; the right-hand side, Round~2. The errors consist of wrongly submitted \texttt{\#ifdef} statements. In general, it turns out that participants commit less errors when using emergent interfaces. The \textit{MobileMedia} methods are simpler, which might explain why participants commit less errors when performing the task in such product line.
+
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Barplot-NE2.pdf}
+\caption{Number of Errors for the unused-variable task in both rounds.}
+\label{fig:barplots-ne2}
+\end{figure}
+
+%To identify other tendencies, we also performed a meta-analysis, jointly analyzing both rounds by combining their results. The differences are statistically significant for both tasks.
+
+To identify other tendencies, we also performed a meta-analysis, where we combine and analyze both rounds results. The time differences are statistically significant for both tasks.
+
+\subsection{Interpretation}
+
+\paragraph{Effort reduction}
+Regarding Question~1 (effort reduction), we found that emergent interfaces reduce the time spent to accomplish the new-requirement tasks. The difference is large with a three-fold improvement and statistically significant. Despite different student levels (graduate \textit{versus} undergraduate), the results are stable across both rounds.
+
+We regard this as a confirmation that emergent interfaces make cross-feature dependencies explicit and help our participants to concentrate on the task, instead of navigating throughout the code to find and reason about dependencies. 
+
+Additionally, we can see a qualitative difference between new-requirement tasks that require \textit{interprocedural} analysis across several methods and unused-variable tasks that require to analyze only code of a single method, where tasks involving \textit{interprocedural} analysis show higher speedups.
+We argue that the effect is general to tasks with \textit{interprocedural} dependencies, since they are more difficult to follow without tool support. In contrast, emergent interfaces contribute comparably little over simple textual search tools when applied in the local context of a function, especially small ones. %In fact, we obtain statistically significant evidence in favor of emergent interfaces in only one round. 
+Still, we can carefully interpret our results as suggesting that the effort gains might depend on the method complexity and size in the \textit{intraprocedural} context: speedups were considerably higher in the \textit{Best Lap} task, where variables were placed in longer methods. %When fixing the unused variables, developers spend fairly the same time (with and without emergent interfaces) on average for \textit{MobileMedia} variables. However, they are, on average, 2 times faster with emergent interfaces for the \textit{Best Lap} variables, which are placed at longer methods.
+
+
+%However, they might get confused when Emergo shows many dependencies. Although we did not analyze this case, it turns out that this might not impact our conclusion. Indeed, developers spend more time to deal with dependencies in the Emergo views. On the other hand, developers also would spend more time to find many dependencies when using VSoC.
+ %This situation gets worse if, from the maintenance point to the potentially impacted features, developers need to navigate through several method calls (the highest method call depth we have is $2$, see Table~\ref{tab:m1-characteristics}). 
+%We have shown that emergent interfaces can play an important role on decreasing the \textit{effort} to locate these \textit{interprocedural} dependencies. 
+
+In all cases, the performance gained from emergent interfaces outperforms the extra overhead required to compute them. Overall, we conclude that, for code change tasks involving cross-feature dependencies, emergent interfaces can help to reduce effort, while the actual effect size depends on the kind of task (\textit{interprocedural} or \textit{intraprocedural}, method size and complexity, etc).
+
+%In summary, our results reveal a significative time difference in favor of emergent interfaces regarding the \textit{interprocedural} maintenance tasks we consider. But we should take the performance issue carefully into consideration, since it may change our results. In contrast, we can not observe many benefits when considering \textit{intraprocedural} tasks. However, depending on method characteristics like method size, number of features, and number of fragments, emergent interfaces can reduce \textit{Effort}. We also conclude that a method that contains alternative features can contribute to increase \textit{Effort} when using VSoC due to the time to reason about the feature model. emergent interfaces can also provide \textit{Effort} reduction when there is no dependency. The EI is empty. In contrast, developers using VSoC would unnecessarily search for dependencies that do not exist, increasing \textit{Effort}.
+
+
+%However, there is a tradeoff. To achieve these benefits, Emergo needs to compute emergent interfaces in feasible time. Even though we did not notice any performance issue in our experiments, performance might be problem. To minimize this problem, we could apply optimizations into the Emergo algorithms. We could also pre-compute emergent interfaces and rely on caching algorithms.
+
+
+%When considering the \textit{unused-variable} task, the time difference between VSoC and emergent interfaces is smaller when compared to the \textit{new-requirement} task. On average, VSoC is $1.5$ and $1.68$ times slower. Again, the results are pretty similar on both rounds. Nevertheless, we do not reject the null hypothesis on \textit{Round~1}. So, we can not expect many benefits when considering \textit{intraprocedural} dependencies. To find \textit{intraprocedural} dependencies in short methods, emergent interfaces adds little to standard tools like highlighting. However, we might observe \textit{Effort} reduction even in short methods. For example, when we have mutually exclusive features where the presence of \textit{A} prohibits the presence of \textit{B}. Since this information may not be explicit in source code, developers are susceptible to open, analyze, and even change features unnecessarily: if we maintain feature \textit{A}, there is no need to take \textit{B} as a potential impacted feature. Emergo executes feature-sensitive analyses, so dependencies between \textit{A} and \textit{B} are not taken into account. In contrast, VSoC users might spend time reasoning about the feature model.
+
+\paragraph{Correctness}
+Regarding Question~2 (reducing the number of errors made), our experiment suggests that emergent interfaces can reduce errors.
+
+The \textit{new-requirement} task fits into an incomplete fix that has been pointed as a type of mistake in bug fixing~\cite{yin-fixes-become-bugs-fse11}. It is ``introduced by the fact that fixers may forget to fix all the buggy regions with the same root cause." Here the developer performs the code change in one feature but, due to cross-feature dependencies, she needs to change some other feature as well. If she does not change it, she introduces an error. To discover this kind of incomplete fix, developers should compile and execute one product with the problematic feature combination. Since there are so many potential product combinations, they might discover the error too late.
+
+Given that emergent interfaces make developers aware of cross-feature dependencies, the chances of changing the impacted features increases, leading them to not press the \textit{Finish} button too rashly. This is consistent with recent research~\cite{yin-fixes-become-bugs-fse11}: ``If all such potential `influenced code' (either through control- or data-dependency) is clearly presented to developers, they may have better chances to detect the errors.'' Our results suggest that participants tend to introduce more errors without emergent interfaces. For unused-variable tasks, we can again observe that the longer methods of \textit{Best Lap} are more prone to errors than the shorter methods of \textit{MobileMedia}.
+
+%Our results reveal that participants using VSoC also tend to wrongly write more feature expressions when compared to emergent interfaces: 75\% and 78\% (\textit{Round~1} and \textit{Round~2}). Because emergent interfaces point the features that use the variable we are fixing, it is easier to write the feature expression correctly. The majority of the errors happened for the \textit{Best Lap} variables, which are inside large methods: $87\%$ and $78\%$ of all wrongly written feature expressions occur for \textit{Best Lap} variables.
+
+\paragraph{Outlook}
+\label{sec:outlook}
+First, Our experiment considered the influence of emergent interfaces in a specific scenario of preprocessor-based product lines. As we argued in Section~\ref{sec:motivating}, the concept can be generalized to enhance other implementation mechanisms with insufficient modularity mechanisms. Of course, we cannot simply transfer our results to these settings, but we are confident that, in follow-up experiments, we could find similar improvements also for task involving cross-feature dependencies in aspect- or feature-oriented implementations.
+
+Second, our tasks were tailored to the specific capabilities of emergent interfaces. As discussed earlier, emergent interfaces address a narrow but important class of problems. We believe that it may actually be beneficial to run emergent interfaces in the background during any code changes and notify the user in any case the change would involve cross-feature dependencies. This way, a tool could lurk unnoticed in the background but would become active for specifically the kind of tasks we analyzed in our experiment to bring corresponding benefits regarding efficiency and correctness to those changes.
+
+Finally, emergent interfaces have several capabilities that we did not explore in our experiment. For instance, in product lines often dependencies between features exist. Whereas a developer needs to manually search for dependencies and compare \texttt{\#ifdef} annotations on code statements with dependencies specified elsewhere, the underlying feature-sensitive data-flow analysis of Emergo can take such dependencies into account mechanically and automatically exclude infeasible paths (see Figure~\ref{fig:emergo-alternative}). Furthermore, even situations where Emergo derives empty interfaces can provide valuable information to users, indicating that they can stop their search; a fact that we did not evaluate yet.
+
+\subsection{Threats to validity}
+
+As in every experiment, there are several threats to validity. 
+Most importantly, our experiment is limited to a specific implementation technique and specific code change scenarios, as discussed in Section~\ref{sec:outlook}; generalization to aspect-oriented languages and others requires further investigation; generalization to arbitrary maintenance tasks is not intended.
+
+Second, our code change tasks are relatively simple (they take only few minutes to be accomplished). Nevertheless, we can still find bug reports regarding undeclared, uninitialized, and unused problems of single variables as well as of their uses along the code.\footnote{See \url{https://bugzilla.gnome.org/show_bug.cgi?id=580750}, \url{https://bugzilla.gnome.org/show_bug.cgi?id=445140}, \url{https://bugzilla.gnome.org/show_bug.cgi?id=309748}, \url{https://bugzilla.gnome.org/show_bug.cgi?id=461011}} Moreover, we claim that bigger tasks are formed by composing smaller ones. So, if we provide benefits for small tasks, it is plausible to consider that we can sum their times up and observe benefits for the whole task. Thus, we might carefully extrapolate our results to bigger tasks as well. Also, we analyze tasks on unfamiliar source code, whereas in practice developers might remember cross-feature dependencies from knowledge gained in prior tasks. 
+
+% that is particularly sensitive to knowledge about feature dependencies. We argue that feature dependencies are important for many code change tasks in product lines, but cannot generalize to all code change tasks.
+
+%Our results are specific to preprocessor-based implementations, and may potentially generalize to feature modules and aspects, though that requires further experiments.
+
+Furthermore, recruiting students instead of professional developers as participants threats external validity. Though our students have some professional experience (60\,\% of our graduate students and 50\,\% of our undergraduate students reported industrial experience) and researchers have shown that graduate students can perform similar to professional developers~\cite{buse-students-experiments-sigplan-11}, we cannot generalize the results to other populations. The results are nevertheless relevant to emerging technology clusters, especially the ones in developing countries like Brazil, which are based on a young workforce with a significant percentage of part time students and recently graduated professionals.
+
+
+
+
+%Our experiment focuses on simple tasks that only require changing variable values and conditional statements in the impacted fragments or fixing unused variable warnings. Despite having many other tasks we do not consider, our results may still hold for some other fine-grained tasks, like adding a new assignment to an existing variable and changing variable types.
+
+Fourth, \textit{MobileMedia} is a small product line. We minimize this threat by also considering a real and commercial product line with \textit{Best Lap}. The results for both are consistent but we still need to consider more product lines. %However, it seems that characteristics like method size, complexity, and different kinds of feature dependencies predominate over the product line.
+
+Emergent interfaces depend on data-flow analysis, which is potentially expensive to perform. In our experiments, we have included analysis time, but analysis time may not scale sufficiently with larger projects. In that case developers have to decide between imprecise results, precalculation in the background or in nightly builds, or advanced incremental computation strategies. When using imprecise analysis, the use of Emergo could even lead developers to a dangerous sense of security. In our experiment, analysis could be performed precisely in the reported moderate times.
+
+Regarding construct validity, the time penalty that we add to wrong answers for the unused-variable task is potentially controversial. That way, the measured correctness influences the measured time. We argue that to provide the correct answer, participants would need more time and a test case, so the adjustment seems realistic. Also, we obtain similar statistical conclusions in both original and adjusted data.
+
+%To avoid errors during the experiment, Emergo computes interfaces using exclusively \textit{interprocedural} analyses.  So, we are counting unnecessarily extra time for the \textit{unused-variable} task, which can also change the ANOVA test results.
+
+Finally, regarding internal validity, we control many confounding parameters by keeping them constant (environment, tasks, domain knowledge) and by randomization. We reduce the influence of reading time by forcing participants to read the task before pressing the \textit{Play} button and the influence of writing time by making the actual changes small and simple. 
+
+%The currently used data-flow analysis for product lines~\cite{} is not entirely precise. \chk{todo, discuss as threat to validity. emergo is imprecise? matter of performance?}
+%Unfortunately, missing feature dependencies is not exclusively related to developers, but to our technique, due to the lack of completeness and precision of our data-flow analyses. Developers who rely on Emergo cannot perceive additional dependencies, which might lead them to introduce \textit{errors} to the product line. To minimize this limitation of our technique, we might consider many analyses to catch feature dependencies as much as possible. However, there is a tradeoff: better precision; lower performance.
+
+%Since we used students, we should not generalize in principle our results to industry professionals. However, after the experiment, we asked whether they have already worked for a company or public institution as a programmer, and $6$ (60\%) MSc/PhD and $7$ (50\%) undergraduate students answered positively, varying from few months to many years of experience. Thus, we can carefully interpret our findings to experience developers as well. In fact, some studies have pointed out that using students as participants is a good surrogate for using industry professionals~\cite{buse-students-experiments-sigplan-11}.
+
+%Our participants were not familiar with any source code. We believe that knowing it might change our results, since developers would be aware of dependencies regardless of using our technique. Nevertheless, we claim that, in a real product line like \textit{Best Lap}, it is unfeasible to know all dependencies, specially the fine-grained ones we consider. Thus, our results may still hold for developers familiar with the source code.
+
+%The majority of the participants ($84\%$) did not know preprocessors either. But we can carefully generalize our results to developers familiar with this technique as well. Only the \textit{unused-variable} task requires participants manipulating \texttt{\#ifdef} expressions. The results point to high ratio of correctness, so our training and warmup seem enough. We believe that participants learn preprocessors quickly because it is a simple technique.
+
+%We can carefully consider our results to methods that do not have feature dependencies, because developers using VSoC would search for dependencies that do not exist (consequently, not showed by the emergent interfaces), increasing \textit{effort}. However, the missing dependency threat also appears here: if Emergo misses dependencies, developers can introduce problems to the product line.

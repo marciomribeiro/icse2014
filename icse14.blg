@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: icse14.aux
+The style file: abbrv.bst
+Database file #1: MMR.bib
+You've used 47 entries,
+            2118 wiz_defined-function locations,
+            957 strings with 18551 characters,
+and the built_in function-call counts, 19994 in all, are:
+= -- 2033
+> -- 976
+< -- 25
++ -- 389
+- -- 336
+* -- 1411
+:= -- 3148
+add.period$ -- 164
+call.type$ -- 47
+change.case$ -- 307
+chr.to.int$ -- 0
+cite$ -- 47
+duplicate$ -- 804
+empty$ -- 1504
+format.name$ -- 336
+if$ -- 4350
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 48
+newline$ -- 239
+num.names$ -- 94
+pop$ -- 360
+preamble$ -- 1
+purify$ -- 262
+quote$ -- 0
+skip$ -- 575
+stack$ -- 0
+substring$ -- 1234
+swap$ -- 253
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 184
+warning$ -- 0
+while$ -- 185
+width$ -- 49
+write$ -- 561

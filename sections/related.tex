@@ -1,0 +1,54 @@
+%!TEX root = ../main.tex
+
+\section{Related work}
+
+\label{sec:relatedwork}
+
+%Emergent interfaces provide a tool-based alternative to language-based modularity mechanisms.
+
+
+\paragraph{Preprocessor-based variability}
+Preprocessor-based variability is common in industry (in fact likely the most common implementation form for product lines), even though its limitations regarding feature modularity are widely known and criticized~\cite{ifdef-harmful, F:EWSM95}. In this implementation form no interfaces exist between features.
+
+Emergent interfaces follow a line of research works that try to provide tool-based solutions to help practitioners cope with existing preprocessor-infested code.
+Virtual separation was explored with the tool CIDE, which can hide files and code fragments based on a given feature selection~\cite{christian-cide-icse08}. The version editor~\cite{ABGM:TSE02}, C-CLR~\cite{SGC:ACP4IS07}, and the Leviathan file system~\cite{HEBSL:FOSD11} show only projections of variable source code along similar lines. Similar ideas have also been explored outside the product-line context most prominently in Mylyn~\cite{murphy-mylyn-fse2006}, which learns from user behavior and creates tasked-based views (usually at the file level). Also in this context, emergent interfaces can help to make dependencies to hidden code fragments visible. 
+
+Along those lines, several researchers investigated close-world whole-product-line analysis techniques that can type check or model all configurations of a product line in an efficient way~\cite{batory-safe-composition-gpce07,KATS:TOSEM11,KOE:OOPSLA12}. The underlying analysis of Emergo follows the general idea of whole-product-line analysis, but extends prior work this to data-flow analysis.
+
+In our evaluation, we investigated only the influence of emergent interfaces, but not of other facets of preprocessor usage or virtual separation, which have been explored in prior complementary studies. Specifically, Feigenspan et al.\ have shown in a series of controlled experiments that different representations of conditional-compilation annotations can improve program comprehension~\cite{FKALSDPLS:ESE12}. Furthermore, Le et al.\ have shown in a controlled experiment that hiding irrelevant code fragments can improve understanding of product lines~\cite{erwig-harmful}---a result that analyzes with an ex-post analysis of using the version editor showing significant productivity increases~\cite{ABGM:TSE02}. These results complement each other and help building a tool environment for efficient maintenance of preprocessor-based implementations.
+
+\paragraph{Feature modularity} Separating concerns in the implementation and hiding their internals has a long history in software-engineering research~\cite{parnas-criteria-cacm72} and programming language design~\cite{liskov-clu-77}. The research field has received significant attention with the focus on crosscutting concerns in the context of aspect-oriented programming~\cite{kiczales-aspectoriented-ecoop97}.
+
+Early work on aspect-oriented programming was often criticized for neglecting modularity with clear interfaces~\cite{storzer-fragile-pointcut-04,S:OOPSLA06}, whereas more recently many researchers have investigated how to add additional interface mechanisms~\cite{aldrich-open-modules-ecoop05,SPAK:TOSEM10,GSSSTCR:IEEESoftware06,aspect-scope}, typically adding quite heavyweight language constructs. In contrast, our idea relies on tools to emerge interfaces on demand. So, developers do not need to write them in advance.
+
+%\textbf{TODO: are there any languages where data-flow dependencies show up in interfaces, not only structural and type dependencies? is the next block something along those lines?}
+
+Conceptual Modules~\cite{baniassad-conceptual-module-icse98} support analyzing the interface of a specific module---also using \textit{def-use} chains internally. Emergent interfaces extend conceptual modules by considering features relationships. Where conceptual modules were evaluated regarding correctness with case studies, we contribute a controlled experiment to evaluate correctness and reduced effort.
+
+
+
+Emergent interfaces pursue an alternative, tool-based strategy, leaving the languages as is (at least until mainstream languages support modular crosscutting implementations), but providing tool support for developers. Eventually both directions may converge by using emergent interfaces to infer interfaces (similar to type inference, and with similar tradeoffs).
+
+
+
+Overall, implicit and inferred interfaces, as computed by Emergo, might provide an interesting new point to explore feature modularity. Similar to the idea of virtual separation of concerns where we have no real separation but only emulate some form of modularity at tool level with views, emergent interfaces can emulate the benefits of real interfaces at a tool level. It cannot and does not want to replace a proper module system with explicit machine-checked interfaces~\cite{aldrich-open-modules-ecoop05,SPAK:TOSEM10,GSSSTCR:IEEESoftware06,CB:SPLC08}, but it can provide an interesting compromise between specification effort and usability~\cite{fosd11}.
+
+
+\paragraph{Hidden dependencies}
+Hidden dependencies are known to be problematic. This can be traced back to avoiding global variables~\cite{mary-shaw-global-variable-harmful-73}, where developers have no information over who uses their variables, since there is ``no mutual agreement between the creator and the accessor.'' In this context, developers are prone to introduce new errors during fixing activities~\cite{yin-fixes-become-bugs-fse11}, since information about the agreement is not available. Emergent interfaces support developers maintaining (variable) systems written in languages that do not provide strong interface mechanisms (between features). Indeed, the languages do not have such mechanisms for fine-grained crosscutting features such as the ones we often find in product lines.
+
+\paragraph{Prior work on emergent interfaces}
+We have first proposed emergent interfaces in an Onward! paper~\cite{ribeiro-emergent-onward10}. The prototype tool we introduced was based on CIDE~\cite{christian-cide-icse08} to annotate features and the reaching-definition analysis was approximated and unsound. It was neither \textit{interprocedural} nor even feature-sensitive, checking only whether the maintenance-point annotation was different of the reached statements' annotation. Subsequently, we assessed how often cross-feature dependencies occur in practice by mechanically mining 43 software systems with preprocessor variability~\cite{ribeiro-feature-dependencies-gpce11}, using an srcML-based infrastructure~\cite{liebig-40spls-icse10} conservatively approximating \textit{intraprocedural} data-flow using proxy metrics (unsound, but sufficient to approximate the frequency of the problem). Furthermore, we estimated potential effort reduction by a tool like Emergo, by  simulating code change tasks: we randomly selected variables from the $43$ systems and estimated developers effort by counting how many \texttt{\#ifdef} blocks they would analyze with and without emergent interfaces, showing a potential for significant reduction. 
+In another branch of work, we investigated precise and efficient mechanisms for \emph{feature-sensitive} data-flow analyses~\cite{brabrand-dfa4spl-aosd12, brabrand-dfa4spl-taosd12, bodden-ifds4spl-pldi13}. These advances now form the technical infrastructure from which emergent interfaces are computed precisely (without unsound approximations of prior work).
+In this paper, we bring together these results and focus on the originally envisioned application: emergent interfaces. We present a significantly revised and extended version of Emergo that uses \textit{intraprocedural} and \textit{interprocedural} analysis, and, for the first time, evaluate the actual benefit of emergent interfaces for code change tasks in a controlled experiment with human participants.
+
+% Ignore tool papers!
+%\idea{Christian, what about the emergo paper of the AOSD tool session? As far as I remember, I think that the main difference is that here we can execute emergo in real systems like best lap. In that paper, we used emergo in toys. Can we say that we 'significantly' extended Emergo? Not sure about that...}
+
+%- emergo sem ser para software real
+
+%In this paper, we revised and evolved the concept as well as the tool to implement it. In addition,  (last paragraph of the introduction)
+
+%\textbf{TODO add a second or two expanding on the last paragraph on the introduction. be precise.}
+
+%Emergo internally uses a variability-aware data-flow analysis that detects dependencies, even between code fragments that belong to different features. The product-line community has also investigated many analysis approaches for whole product lines, most prominently safe composition~\cite{batory-safe-composition-gpce07}, which performs type checking and detects corresponding dependencies. A product-line type system in CIDE can already raise type errors in specific configurations even if it relates to hidden code~\cite{KATS:TOSEM11}. Data-flow analysis in Emergo is more expensive to perform than type analysis, but gives also more precise interfaces.

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<link rel="stylesheet" type="text/css" href="styles.css" />
+
+<title>Marcio Ribeiro (paper submitted to OOPSLA 2013)</title>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11245989-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<h1><center><b>Feature Maintenance with Emergent Interfaces</b></center></h1>
+
+Hidden code dependencies are responsible for many complications in maintenance tasks. With the introduction of variable features in product lines, dependencies may even cross feature boundaries and related problems are prone to be detected late. Many current implementation techniques for product lines lack proper interfaces, which could make such dependencies explicit. As alternative to changing the implementation approach, we introduce a tool-based solution to support developers in recognizing and dealing with feature dependencies: emergent interfaces. Emergent interfaces are computed on demand, based on feature-sensitive interprocedural dataflow analysis. They emerge in the IDE and emulate benefits of modularity not available in the host language. In a replicated controlled experiment, we found that emergent interfaces can improve performance of maintenance tasks by up to 3 times while also reducing the number of errors.
+
+<br><br>
+
+<h2><b>Data</b></h2>
+
+<ul>
+<li><a href="files/r1/Time-M1-All.dat">New-requirement task: Round 1 - Time</a></li>
+<li><a href="files/r2/Time-M1-All.dat">New-requirement task: Round 2 - Time</a></li>
+<li><a href="files/r1/Time-Errors-All.dat">New-requirement task: Round 1 - Errors</a></li>
+<li><a href="files/r2/Time-Errors-All.dat">New-requirement task: Round 2 - Errors</a></li>
+<li><a href="files/r1/Time-M2-All.dat">Unused-variable task: Round 1 - Time</a></li>
+<li><a href="files/r2/Time-M2-All.dat">Unused-variable task: Round 2 - Time</a></li>
+</ul>
+
+<h2><b>Results</b></h2>
+
+To generate the results in HTML (see the links below), you might use our <a href="files/Scripts.r">R script</a>. To do so, consider the following steps:
+
+<ul>
+<li>Install R.</li>
+<li>Install the following packages and their dependencies:
+<ul>
+<li>"beanplot"</li>
+<li>"ggplot2"</li>
+<li>"R2HTML"</li>
+</ul>
+<li>Open the script in a text editor and change the values of the variables <i>importPath</i> and <i>exportPath</i>. The <i>importPath</i> should point to a directory that contains the data files (.dat files above). <i>exportPath</i> should point to the directory you want to save the generated HTML results.</li>
+<li>Load the script in R.</li>
+<li>Call the main function. Here is its signature: <i>main <- function(round, task, SD=F)</i>
+<ul>
+<li><b>round</b> the round number. Valid numbers: 2 (at Federal University of Pernambuco, Round 1 in the paper) and 3 (Federal University of Alagoas, Round 2 in the paper); any different number corresponds to rounds 2 and 3 together.</li>
+<li><b>task</b> the task number. Valid numbers: 1 (New-requirement task) and 2 (Unused-variable task).</li>
+<li><b>SD</b> if true, the script will generate the results adjusting the time data with the SD-based time penalty. Notice that SD occurs only for task 2 (Unused-variable).</li>
+<li>Example: <i>main(3, 2, T)</i> generates the results for the round at Federal University of Alagoas, regarding the Unused-variable task by using the SD-based time adjustment.</li>
+</ul>
+<li>Here are the results generated using the R script:</li>
+
+<ul>
+<li><a href="results/R2-M1/R2-M1.html">New-requirement task: Round 1</a></li>
+<li><a href="results/R3-M1/R3-M1.html">New-requirement task: Round 2</a></li>
+<li><a href="results/R2-M2-SD/R2-M2-SD.html">Unused-variable task: Round 1</a></li>
+<li><a href="results/R3-M2-SD/R3-M2-SD.html">Unused-variable task: Round 2</a></li>
+</ul>
+</ul>
+
+<h2><b>Tasks</b></h2>
+
+<ul>
+<li><a href="files/Tasks-English.doc">Tasks (in english)</a></li>
+<li><a href="files/Tasks-Portuguese.doc">Tasks (in portuguese)</a></li>
+</ul>
+
+<h2><b>Eclipse plug-ins</b></h2>
+
+<ul>
+<li><a href="http://www.cin.ufpe.br/~emergo">Emergo webpage</a></li>
+<li><a href="files/Experimentum_1.0.0.201204261918.jar">Play/Pause/Finish buttons</a></li>
+</ul>
+
+<h2><b>Product Lines</b></h2>
+
+<ul>
+<li><a href="">Bestlap (commercial product; if you are interested, please send an e-mail to the PC chair)</a></li>
+<li><a href="files/MobileMedia08.zip">MobileMedia</a></li>
+</ul>
+
+<h2><b>Virtual Machine</b></h2>
+
+We have prepared a <a href="https://www.dropbox.com/sh/riljdgh09ch4wx5/kUs9WI7wki">virtual machine</a> to provide the same environment to all participants of our experiment. Notice the following:
+
+<ul>
+<li>You can use <a href="https://www.virtualbox.org">VirtualBox</a> to execute our virtual machine;</li>
+<li>The virtual machine already has the Eclipses, Emergo, and the Play/Pause/Finish plug-in installed.
+<li>We removed Bestlap from Eclipse 1 and Eclipse 2 due to commercial reasons; MobileMedia, on the other hand, is installed in Eclipse 3 and 4.</li>
+<li>As pointed out in the paper, when opened for the first time, the cursor points exactly to the variable that should be changed;</li>
+<li>There is an additional Eclipse to the warmup tasks.</li>
+</ul>
+
+</body>
+</html>
